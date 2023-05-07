@@ -19,5 +19,5 @@ kubectl apply -n argocd -f argo-ingress.yaml
 
 kubectl wait --namespace argocd   --for=condition=ready pod   --selector=app.kubernetes.io/name=argocd-server   --timeout=90s
 
-echo Admin password is
+echo Admin password is 
 kubectl get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" -n argocd| base64 --decode && echo
